@@ -29,7 +29,8 @@ mod tests {
         let caller = starknet::contract_address_const::<0x0>();
         let (world, systems) = setup();
 
-        systems.spawn();
+        // systems.spawn();
+        let letter = systems.generate_wordle();
 
 
     }

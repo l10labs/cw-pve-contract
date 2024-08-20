@@ -1,6 +1,6 @@
 use starknet::ContractAddress;
 
-#[derive(Copy, Drop, Serde)]
+#[derive(Copy, Drop, Serde, Debug)]
 #[dojo::model]
 pub struct Letter {
     #[key]
@@ -11,7 +11,7 @@ pub struct Letter {
 
 }
 
-#[derive(Drop, Serde)]
+#[derive(Drop, Serde, Debug)]
 #[dojo::model]
 pub struct Wordle {
     #[key]

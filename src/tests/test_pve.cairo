@@ -25,13 +25,28 @@ mod tests {
     }
 
     #[test]
-    fn test_single_letter(){
+    fn test_word_generation(){
         let caller = starknet::contract_address_const::<0x0>();
         let (world, systems) = setup();
 
-        // systems.spawn();
+        let mut index: u8 = 0;
+        while index < 5 {
+            let old_letters = get!(world, (caller, index), Letter);
+            println!("old_letters {}: {:?}", index, old_letters);
+            index += 1;
+        };
+
         let letter = systems.generate_wordle();
 
+        let mut index: u8 = 0;
+        while index < 5 {
+            let new_letters = get!(world, (caller, index), Letter);
+            println!("new_letters {}: {:?}", index, new_letters);
+            index += 1;
+        };
+        
+        // let new_letters = get!(world, (caller, 1), Letter);
+        // println!("new_letters: {:?}", new_letters);
 
     }
 }

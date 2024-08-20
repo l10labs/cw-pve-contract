@@ -7,7 +7,7 @@ pub struct Letter {
     pub player: ContractAddress,
     #[key]
     pub position: u8, // 0-4
-    pub value: felt252,
+    pub value: u8,
 
 }
 
